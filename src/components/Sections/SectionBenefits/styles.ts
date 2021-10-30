@@ -61,4 +61,5 @@ export const DescriptionBenefit = styled.p`
   width: 380px;
   color: ${(p) => p.theme.colors.textSecondary};
   font-size: ${(p) => p.theme.font.large};
+  line-height: ${(p) => p.theme.spacing.large};
 `;

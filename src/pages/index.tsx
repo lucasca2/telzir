@@ -4,6 +4,7 @@ import { Header } from 'components/Header';
 
 import { SectionBenefits } from '../components/Sections/SectionBenefits';
 import { SectionCalculate } from '../components/Sections/SectionCalculate';
+import { SectionPlans } from '../components/Sections/SectionPlans';
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
       <Header />
       <SectionBenefits />
       <SectionCalculate />
+      <SectionPlans />
     </main>
   );
 };

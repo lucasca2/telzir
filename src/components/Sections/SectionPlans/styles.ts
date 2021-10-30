@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  background-color: ${(p) => p.theme.colors.secondary};
+  background-color: ${(p) => p.theme.colors.background};
 `;
 
 export const WrapperSection = styled.div`
@@ -10,6 +10,8 @@ export const WrapperSection = styled.div`
   padding: ${(p) => p.theme.spacing.giant} ${(p) => p.theme.spacing.giant};
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 
   gap: ${(p) => p.theme.spacing.giant};
 `;
@@ -17,7 +19,9 @@ export const WrapperSection = styled.div`
 export const WrapperTitle = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: ${(p) => p.theme.spacing.small};
+  text-align: center;
 `;
 
 export const Title = styled.h2`
@@ -27,7 +31,7 @@ export const Title = styled.h2`
 `;
 
 export const Subtitle = styled.p`
-  width: 300px;
+  width: 500px;
   color: ${(p) => p.theme.colors.textSecondary};
   font-size: ${(p) => p.theme.font.large};
   line-height: ${(p) => p.theme.spacing.large};
