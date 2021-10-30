@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  background-color: ${(p) => p.theme.colors.background};
+`;
+
+export const WrapperSection = styled.div`
   width: 100%;
   max-width: ${(p) => p.theme.maxWidth};
   padding: ${(p) => p.theme.spacing.giant} ${(p) => p.theme.spacing.giant};
