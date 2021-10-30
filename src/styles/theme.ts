@@ -26,6 +26,7 @@ export const theme = {
   },
   footer: {
     background: '#FFE8D3',
+    border: '#CBB7A5',
   },
   header: {
     background: 'linear-gradient(to top, #efca95, #fcdeb5);',

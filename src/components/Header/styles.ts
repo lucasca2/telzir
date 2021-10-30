@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.header`
   position: relative;
   flex-shrink: 0;
   height: 585px;
