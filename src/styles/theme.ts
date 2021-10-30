@@ -15,9 +15,8 @@ export const theme = {
 
     highlight: '#ff0',
 
-    border: '#e4e4e4',
+    border: '#D0D0D0',
 
-    textPrimary: '#185349',
     textSecondary: '#666',
 
     textDark: '#444',
@@ -54,6 +53,7 @@ export const theme = {
     xLarge: '32px',
     xxLarge: '40px',
     xxxLarge: '48px',
+    xxxxLarge: '56px',
     giant: '64px',
   },
   button: {
