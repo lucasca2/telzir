@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 export const Image = styled.img`
   position: absolute;
   top: -80px;
-  right: 0;
+  right: -50px;
   min-height: 100%;
   width: 115%;
   object-fit: cover;
@@ -77,7 +77,7 @@ export const WrapperBottom = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 450px;
-  margin: auto 0;
+  margin: auto 0 auto ${(p) => p.theme.spacing.giant};
   align-items: flex-start;
 
   gap: ${(p) => p.theme.spacing.medium};

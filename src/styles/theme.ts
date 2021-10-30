@@ -1,5 +1,5 @@
 export const theme = {
-  maxWidth: '1240px',
+  maxWidth: '1360px',
   borderRadius: '8px',
   colors: {
     primary: '#AB49CE',

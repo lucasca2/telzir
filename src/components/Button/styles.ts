@@ -38,12 +38,11 @@ export const Wrapper = styled.button<TWrapper>`
       p.bordered &&
       css`
         background-color: ${p.theme.colors[p.color]};
-        color: ${(p) =>
-          readableColor(
-            p.theme.colors[p.color],
-            p.theme.colors.textDark,
-            p.theme.colors.textLight
-          )};
+        color: ${readableColor(
+          p.theme.colors[p.color],
+          p.theme.colors.textDark,
+          p.theme.colors.textLight
+        )};
       `}
 
     ${(p) =>
