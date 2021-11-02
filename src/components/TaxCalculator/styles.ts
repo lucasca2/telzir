@@ -65,3 +65,24 @@ export const ColumnResult = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+
+export const ColumnAction = styled.div`
+  flex: 1;
+  flex-shrink: 0;
+  padding: ${(p) => p.theme.spacing.medium} ${(p) => p.theme.spacing.xLarge};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & button {
+    min-width: 300px;
+  }
+
+  @media (max-width: 768px) {
+    & button {
+      min-width: unset;
+      width: 100%;
+    }
+  }
+`;

@@ -6,12 +6,13 @@ export const BrazilDDDs = [
 ];
 
 export const Plans = [
-  { plan: 'FaleMais 30' },
-  { plan: 'FaleMais 60' },
-  { plan: 'FaleMais 120' },
+  { name: 'Sem Plano' },
+  { name: 'FaleMais 30' },
+  { name: 'FaleMais 60' },
+  { name: 'FaleMais 120' },
 ];
 
-export const Times = [
+export const Durations = [
   { time: 10 },
   { time: 20 },
   { time: 30 },

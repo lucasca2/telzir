@@ -1,25 +1,40 @@
 import { FC, useEffect, useState } from 'react';
 
+import { calculateTax } from '../../lib/calculateTax';
+import { Button } from '../Button';
 import { Select } from './components/Select';
-import { BrazilDDDs, Times, Plans } from './data';
-import { Wrapper, Line, Column, ColumnResult } from './styles';
+import { BrazilDDDs, Durations, Plans } from './data';
+import { Wrapper, Line, Column, ColumnResult, ColumnAction } from './styles';
 
 export const TaxCalculator: FC = () => {
   const [origin, setOrigin] = useState<any>();
   const [destiny, setDestiny] = useState<any>();
-  const [time, setTime] = useState<any>();
+  const [duration, setDuration] = useState<any>();
   const [plan, setPlan] = useState<any>();
 
-  useEffect(() => {
-    if (origin && destiny && time) {
-      console.log('origin', origin);
-      console.log('destiny', destiny);
-      console.log('time', time);
-      console.log('plan', plan?.plan);
+  const [result, setResult] = useState<string>('');
 
-      console.log(`CALCULA COM O PLANO: ${plan?.plan || 'SEM PLANO'}`);
+  const [originOptions, setOriginOptions] = useState(BrazilDDDs);
+  const [destinyOptions, setDestinyOptions] = useState(BrazilDDDs);
+
+  useEffect(() => {
+    if (origin) {
+      setDestinyOptions(BrazilDDDs.filter((dest) => dest.ddd !== origin.ddd));
     }
-  }, [origin, destiny, time, plan]);
+  }, [origin]);
+
+  useEffect(() => {
+    if (origin && destiny && duration) {
+      const value = calculateTax({
+        origin: origin.ddd,
+        destiny: destiny.ddd,
+        duration: duration.time,
+        plan: plan?.name,
+      });
+
+      setResult(value);
+    }
+  }, [origin, destiny, duration, plan]);
 
   return (
     <Wrapper>
@@ -28,7 +43,7 @@ export const TaxCalculator: FC = () => {
           <Select
             label="Origem"
             placeholder="Escolha a origem"
-            options={BrazilDDDs}
+            options={originOptions}
             getOptionLabel={(option) => `${option.ddd} - ${option.city}`}
             getOptionValue={(option) => option}
             getValueLabel={(value) => `${value.ddd} - ${value.uf}`}
@@ -40,7 +55,7 @@ export const TaxCalculator: FC = () => {
           <Select
             label="Destino"
             placeholder="Escolha o destino"
-            options={BrazilDDDs}
+            options={destinyOptions}
             getOptionLabel={(option) => `${option.ddd} - ${option.city}`}
             getOptionValue={(option) => option}
             getValueLabel={(value) => `${value.ddd} - ${value.uf}`}
@@ -52,12 +67,12 @@ export const TaxCalculator: FC = () => {
           <Select
             label="Tempo"
             placeholder="Escolha o tempo"
-            options={Times}
+            options={Durations}
             getOptionLabel={(option) => `${option.time} minutos`}
             getOptionValue={(option) => option}
             getValueLabel={(value) => `${value.time} minutos`}
-            value={time}
-            onChange={setTime}
+            value={duration}
+            onChange={setDuration}
           />
         </Column>
       </Line>
@@ -67,9 +82,9 @@ export const TaxCalculator: FC = () => {
             label="Plano"
             placeholder="Escolha o plano"
             options={Plans}
-            getOptionLabel={(option) => option.plan}
+            getOptionLabel={(option) => option.name}
             getOptionValue={(option) => option}
-            getValueLabel={(value) => value.plan}
+            getValueLabel={(value) => value.name}
             value={plan}
             onChange={setPlan}
           />
@@ -78,9 +93,16 @@ export const TaxCalculator: FC = () => {
       <Line>
         <ColumnResult>
           <strong>Total</strong>
-          <strong>R$ 0,00</strong>
+          <strong>{result === 'R$ 0,00' ? 'Grátis' : result}</strong>
         </ColumnResult>
       </Line>
+      {result && plan && plan.name !== 'Sem Plano' && (
+        <Line>
+          <ColumnAction>
+            <Button>Contratar</Button>
+          </ColumnAction>
+        </Line>
+      )}
     </Wrapper>
   );
 };
