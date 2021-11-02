@@ -21,13 +21,13 @@ export const Title = styled.h2`
   width: 300px;
 `;
 
-export const WrapperContent = styled.div``;
+export const WrapperContent = styled.div`
+  flex: 1;
+`;
 
 export const WrapperBenefit = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column;
-  gap: ${(p) => p.theme.spacing.small};
 
   padding: ${(p) => p.theme.spacing.xxxxLarge} 0;
 
@@ -49,6 +49,12 @@ export const WrapperBenefit = styled.div`
       background-color: ${(p) => p.theme.colors.border};
     }
   }
+`;
+
+export const WrapperContentBenefit = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${(p) => p.theme.spacing.small};
 `;
 
 export const TitleBenefit = styled.h3`
