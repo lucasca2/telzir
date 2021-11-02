@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { TaxCalculator } from '../../TaxCalculator';
 import {
   Wrapper,
   WrapperSection,
@@ -23,7 +24,9 @@ export const SectionCalculate: FC = () => {
             officia deserunt mollit anim id est laborum.
           </Subtitle>
         </WrapperTitle>
-        <WrapperContent />
+        <WrapperContent>
+          <TaxCalculator />
+        </WrapperContent>
       </WrapperSection>
     </Wrapper>
   );

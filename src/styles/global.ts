@@ -16,10 +16,6 @@ export const GlobalStyle = createGlobalStyle`
     body {
         overflow: hidden;
     }
-    
-    svg {
-        stroke-width: 1.5px;
-    }   
       
     main {
         height: 100vh;

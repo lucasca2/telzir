@@ -33,4 +33,9 @@ export const Subtitle = styled.p`
   line-height: ${(p) => p.theme.spacing.large};
 `;
 
-export const WrapperContent = styled.div``;
+export const WrapperContent = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-end;
+`;

@@ -22,7 +22,7 @@ export const theme = {
     textDark: '#444',
     textLight: '#fff',
 
-    placeholder: '#aaa',
+    placeholder: '#A8A8A8',
   },
   footer: {
     background: '#FFE8D3',
