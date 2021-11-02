@@ -5,6 +5,10 @@ export const Wrapper = styled.div`
   border-radius: ${(p) => p.theme.borderRadius};
   font-size: ${(p) => p.theme.font.small};
   background-color: ${(p) => p.theme.colors.background};
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Line = styled.div`
@@ -13,6 +17,10 @@ export const Line = styled.div`
 
   &:first-child {
     border-top: none;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 `;
 
@@ -31,6 +39,15 @@ export const Column = styled.div`
 
   & > div {
     min-width: 200px;
+  }
+
+  @media (max-width: 768px) {
+    border-top: 1px solid ${(p) => p.theme.colors.border};
+    border-left: none;
+
+    &:first-child {
+      border-top: none;
+    }
   }
 `;
 

@@ -7,6 +7,10 @@ export const WrapperIlustration = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: ${(p) => p.theme.spacing.medium};
+
+  @media (max-width: 768px) {
+    gap: ${(p) => p.theme.spacing.small};
+  }
 `;
 
 export const WrapperIcon = styled.div`
@@ -15,10 +19,18 @@ export const WrapperIcon = styled.div`
   align-items: center;
   justify-content: center;
   gap: ${(p) => p.theme.spacing.small};
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const Icon = styled.img`
-  width: 40px;
+  width: ${(p) => p.theme.spacing.xxLarge};
+
+  @media (max-width: 768px) {
+    width: ${(p) => p.theme.spacing.xLarge};
+  }
 `;
 
 export const Text = styled.div`
@@ -46,5 +58,15 @@ export const Price = styled.div`
     display: flex;
     flex-direction: column;
     font-size: ${(p) => p.theme.font.large};
+  }
+
+  @media (max-width: 768px) {
+    & > span:nth-child(2) {
+      font-size: ${(p) => p.theme.font.xxLarge};
+    }
+
+    & > span:nth-child(3) {
+      font-size: ${(p) => p.theme.font.small};
+    }
   }
 `;

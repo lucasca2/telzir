@@ -12,6 +12,10 @@ export const WrapperContent = styled.div`
   width: 100%;
   max-width: ${(p) => p.theme.maxWidth};
   padding: ${(p) => p.theme.spacing.giant} ${(p) => p.theme.spacing.giant} 0;
+
+  @media (max-width: 769px) {
+    padding: ${(p) => p.theme.spacing.large} ${(p) => p.theme.spacing.medium} 0;
+  }
 `;
 
 export const WrapperTop = styled.div`
@@ -20,6 +24,11 @@ export const WrapperTop = styled.div`
   gap: ${(p) => p.theme.spacing.giant};
   justify-content: space-between;
   display: flex;
+
+  @media (max-width: 769px) {
+    flex-direction: column;
+    padding: 0 0 ${(p) => p.theme.spacing.large} 0;
+  }
 `;
 
 export const WrapperCopyRight = styled.div`
@@ -31,6 +40,10 @@ export const WrapperCopyRight = styled.div`
   gap: ${(p) => p.theme.spacing.medium};
   padding: ${(p) => p.theme.spacing.xLarge};
   font-size: ${(p) => p.theme.font.nano};
+
+  @media (max-width: 769px) {
+    padding: ${(p) => p.theme.spacing.large} ${(p) => p.theme.spacing.medium};
+  }
 `;
 
 export const Logo = styled.img`
@@ -42,6 +55,10 @@ export const Section = styled.div`
   flex-direction: column;
   gap: ${(p) => p.theme.spacing.medium};
   font-size: ${(p) => p.theme.font.medium};
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const Title = styled.p`

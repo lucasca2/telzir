@@ -14,6 +14,12 @@ export const WrapperSection = styled.div`
   align-items: center;
 
   gap: ${(p) => p.theme.spacing.giant};
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: ${(p) => p.theme.spacing.large} ${(p) => p.theme.spacing.medium};
+    gap: ${(p) => p.theme.spacing.large};
+  }
 `;
 
 export const WrapperTitle = styled.div`
@@ -28,6 +34,10 @@ export const Title = styled.h2`
   font-weight: 500;
   font-size: ${(p) => p.theme.font.xxxLarge};
   width: 300px;
+
+  @media (max-width: 768px) {
+    font-size: ${(p) => p.theme.font.xxLarge};
+  }
 `;
 
 export const Subtitle = styled.p`
@@ -35,6 +45,11 @@ export const Subtitle = styled.p`
   color: ${(p) => p.theme.colors.textSecondary};
   font-size: ${(p) => p.theme.font.large};
   line-height: ${(p) => p.theme.spacing.large};
+
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: ${(p) => p.theme.font.medium};
+  }
 `;
 
 export const WrapperContent = styled.div`
