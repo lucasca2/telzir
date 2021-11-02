@@ -9,7 +9,7 @@ export const theme = {
     backgroundHover: '#f4f4f4',
 
     danger: '#e74c3c',
-    success: '#07bc0c',
+    success: '#27A807',
     warning: '#fdd03b',
     info: '#3498db',
 
